@@ -6,9 +6,80 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DECFB7E61B30749B008037F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7E51B30749B008037F0 /* main.m */; };
+		DECFB7EC1B3074B4008037F0 /* CocoaOniguruma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */; };
+		DECFB7ED1B3074B4008037F0 /* SQLModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EB1B3074B4008037F0 /* SQLModel.framework */; };
+		DECFB7F01B3074C7008037F0 /* MHHandlebarsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7EF1B3074C7008037F0 /* MHHandlebarsPlugin.m */; };
+		DECFB7F31B3074F3008037F0 /* MHHandleBarsExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7F21B3074F3008037F0 /* MHHandleBarsExporter.m */; };
+		DECFB7F51B307544008037F0 /* SQLEditorHandlebarsTemplate.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB7D51B307488008037F0 /* SQLEditorHandlebarsTemplate.bundle */; };
+		DECFB7FC1B307643008037F0 /* report.template in Resources */ = {isa = PBXBuildFile; fileRef = DECFB7FB1B307643008037F0 /* report.template */; };
+		DECFB7FD1B30771C008037F0 /* SQLModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EB1B3074B4008037F0 /* SQLModel.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DECFB7FF1B30776A008037F0 /* CocoaOniguruma.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */; };
+		DECFB8001B30776A008037F0 /* SQLModel.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB7EB1B3074B4008037F0 /* SQLModel.framework */; };
+		DECFB8041B3078DE008037F0 /* TemplateParser.js in Resources */ = {isa = PBXBuildFile; fileRef = DECFB8031B3078DE008037F0 /* TemplateParser.js */; };
+		DECFB80C1B309944008037F0 /* HBHandlebars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB80B1B309944008037F0 /* HBHandlebars.framework */; };
+		DECFB80D1B309952008037F0 /* HBHandlebars.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB80B1B309944008037F0 /* HBHandlebars.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DECFB7F61B307548008037F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DECFB7CD1B307488008037F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DECFB7D41B307488008037F0;
+			remoteInfo = SQLEditorHandlebarsTemplate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DECFB7F41B307539008037F0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Plugins;
+			dstSubfolderSpec = 16;
+			files = (
+				DECFB7F51B307544008037F0 /* SQLEditorHandlebarsTemplate.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DECFB7FE1B307764008037F0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				DECFB7FF1B30776A008037F0 /* CocoaOniguruma.framework in CopyFiles */,
+				DECFB8001B30776A008037F0 /* SQLModel.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DECFB8091B30983B008037F0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DECFB80D1B309952008037F0 /* HBHandlebars.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DECFB7D51B307488008037F0 /* SQLEditorHandlebarsTemplate.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQLEditorHandlebarsTemplate.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFB7D91B307488008037F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DECFB7E31B30749B008037F0 /* SQLTestTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SQLTestTool; sourceTree = BUILT_PRODUCTS_DIR; };
+		DECFB7E51B30749B008037F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaOniguruma.framework; sourceTree = "<group>"; };
+		DECFB7EB1B3074B4008037F0 /* SQLModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SQLModel.framework; sourceTree = "<group>"; };
+		DECFB7EE1B3074C7008037F0 /* MHHandlebarsPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHHandlebarsPlugin.h; sourceTree = "<group>"; };
+		DECFB7EF1B3074C7008037F0 /* MHHandlebarsPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHHandlebarsPlugin.m; sourceTree = "<group>"; };
+		DECFB7F11B3074F3008037F0 /* MHHandleBarsExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHHandleBarsExporter.h; sourceTree = "<group>"; };
+		DECFB7F21B3074F3008037F0 /* MHHandleBarsExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHHandleBarsExporter.m; sourceTree = "<group>"; };
+		DECFB7FB1B307643008037F0 /* report.template */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = report.template; sourceTree = "<group>"; };
+		DECFB8031B3078DE008037F0 /* TemplateParser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = TemplateParser.js; sourceTree = "<group>"; };
+		DECFB80B1B309944008037F0 /* HBHandlebars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HBHandlebars.framework; path = frameworks/HBHandlebars.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -16,6 +87,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DECFB80C1B309944008037F0 /* HBHandlebars.framework in Frameworks */,
+				DECFB7FD1B30771C008037F0 /* SQLModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DECFB7E01B30749B008037F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DECFB7EC1B3074B4008037F0 /* CocoaOniguruma.framework in Frameworks */,
+				DECFB7ED1B3074B4008037F0 /* SQLModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -26,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				DECFB7D71B307488008037F0 /* SQLEditorHandlebarsTemplate */,
+				DECFB7E41B30749B008037F0 /* SQLTestTool */,
 				DECFB7D61B307488008037F0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -34,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				DECFB7D51B307488008037F0 /* SQLEditorHandlebarsTemplate.bundle */,
+				DECFB7E31B30749B008037F0 /* SQLTestTool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -49,9 +133,34 @@
 		DECFB7D81B307488008037F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DECFB80B1B309944008037F0 /* HBHandlebars.framework */,
 				DECFB7D91B307488008037F0 /* Info.plist */,
+				DECFB7EE1B3074C7008037F0 /* MHHandlebarsPlugin.h */,
+				DECFB7EF1B3074C7008037F0 /* MHHandlebarsPlugin.m */,
+				DECFB7F11B3074F3008037F0 /* MHHandleBarsExporter.h */,
+				DECFB7F21B3074F3008037F0 /* MHHandleBarsExporter.m */,
+				DECFB7F81B307565008037F0 /* scripts */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DECFB7E41B30749B008037F0 /* SQLTestTool */ = {
+			isa = PBXGroup;
+			children = (
+				DECFB7E51B30749B008037F0 /* main.m */,
+				DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */,
+				DECFB7EB1B3074B4008037F0 /* SQLModel.framework */,
+			);
+			path = SQLTestTool;
+			sourceTree = "<group>";
+		};
+		DECFB7F81B307565008037F0 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				DECFB8031B3078DE008037F0 /* TemplateParser.js */,
+				DECFB7FB1B307643008037F0 /* report.template */,
+			);
+			path = scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -64,6 +173,7 @@
 				DECFB7D11B307488008037F0 /* Sources */,
 				DECFB7D21B307488008037F0 /* Frameworks */,
 				DECFB7D31B307488008037F0 /* Resources */,
+				DECFB8091B30983B008037F0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -73,6 +183,25 @@
 			productName = SQLEditorHandlebarsTemplate;
 			productReference = DECFB7D51B307488008037F0 /* SQLEditorHandlebarsTemplate.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		DECFB7E21B30749B008037F0 /* SQLTestTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DECFB7E71B30749B008037F0 /* Build configuration list for PBXNativeTarget "SQLTestTool" */;
+			buildPhases = (
+				DECFB7DF1B30749B008037F0 /* Sources */,
+				DECFB7E01B30749B008037F0 /* Frameworks */,
+				DECFB7F41B307539008037F0 /* CopyFiles */,
+				DECFB7FE1B307764008037F0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DECFB7F71B307548008037F0 /* PBXTargetDependency */,
+			);
+			name = SQLTestTool;
+			productName = SQLTestTool;
+			productReference = DECFB7E31B30749B008037F0 /* SQLTestTool */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -84,6 +213,9 @@
 				ORGANIZATIONNAME = "MalcolmHardie Solutions";
 				TargetAttributes = {
 					DECFB7D41B307488008037F0 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					DECFB7E21B30749B008037F0 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
 				};
@@ -100,6 +232,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				DECFB7E21B30749B008037F0 /* SQLTestTool */,
 				DECFB7D41B307488008037F0 /* SQLEditorHandlebarsTemplate */,
 			);
 		};
@@ -110,6 +243,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DECFB7FC1B307643008037F0 /* report.template in Resources */,
+				DECFB8041B3078DE008037F0 /* TemplateParser.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,10 +255,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DECFB7F01B3074C7008037F0 /* MHHandlebarsPlugin.m in Sources */,
+				DECFB7F31B3074F3008037F0 /* MHHandleBarsExporter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DECFB7DF1B30749B008037F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DECFB7E61B30749B008037F0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DECFB7F71B307548008037F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DECFB7D41B307488008037F0 /* SQLEditorHandlebarsTemplate */;
+			targetProxy = DECFB7F61B307548008037F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DECFB7DA1B307488008037F0 /* Debug */ = {
@@ -207,8 +360,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SQLTestTool",
+					"$(PROJECT_DIR)/SQLEditorHandlebarsTemplate",
+					"$(PROJECT_DIR)/frameworks",
+				);
 				INFOPLIST_FILE = SQLEditorHandlebarsTemplate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../frameworks/";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -219,11 +384,51 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SQLTestTool",
+					"$(PROJECT_DIR)/SQLEditorHandlebarsTemplate",
+					"$(PROJECT_DIR)/frameworks",
+				);
 				INFOPLIST_FILE = SQLEditorHandlebarsTemplate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../frameworks/";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		DECFB7E81B30749B008037F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SQLTestTool",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = .;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DECFB7E91B30749B008037F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SQLTestTool",
+				);
+				LD_RUNPATH_SEARCH_PATHS = .;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -244,6 +449,14 @@
 			buildConfigurations = (
 				DECFB7DD1B307488008037F0 /* Debug */,
 				DECFB7DE1B307488008037F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DECFB7E71B30749B008037F0 /* Build configuration list for PBXNativeTarget "SQLTestTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DECFB7E81B30749B008037F0 /* Debug */,
+				DECFB7E91B30749B008037F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

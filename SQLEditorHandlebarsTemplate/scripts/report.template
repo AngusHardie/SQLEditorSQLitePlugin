@@ -1,0 +1,22 @@
+
+<html>
+
+
+<div class="entry">
+<h1>{{title}}</h1>
+<div class="body">
+
+
+<ul>
+{{#objectList}}
+
+
+<li>an object: {{fullyQualifiedName}}</li>
+
+{{/objectList}}
+</ul>
+
+</div>
+</div>
+
+</html>
