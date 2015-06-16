@@ -1,20 +1,97 @@
+<!DOCTYPE html>
 
 <html>
+<head>
+<title>SQLEditor: Report</title>
+<style>
+body {
 
+font-family:sans-serif;
+
+}
+
+table.dataTable {
+
+border-collapse:collapse;
+}
+
+table.dataTable th
+{
+
+background:black;
+color:white;
+font-weight:normal;
+}
+
+table.dataTable th, table.dataTable td {
+border: 1px solid black;
+padding:0.25em;
+}
+
+
+</style>
+</head>
 
 <div class="entry">
 <h1>{{title}}</h1>
 <div class="body">
 
 
-<ul>
-{{#objectList}}
+
+{{#container.objectList}}
+<hr>
+
+<h2>{{fullyQualifiedName}}</h2>
+
+<h3>Columns</h3>
 
 
-<li>an object: {{fullyQualifiedName}}</li>
+<table class="dataTable">
+<tr><th>Name</th><th>Type</th><th>options</th></tr>
+{{#fields}}
+{{#isSQLType "SQLField"}}
+    <tr>
 
-{{/objectList}}
-</ul>
+        <td>{{name}}</td>
+        <td> {{type}}</td>
+
+        <td>
+        {{#if primaryKey}}[PK]{{/if}}
+        {{#if isUnique}}[UNIQUE]{{/if}}
+        {{#if notNull}}[NOT NULL]{{/if}}
+        </td>
+    </tr>
+
+{{/isSQLType}}
+{{/fields}}
+</table>
+
+<h3>Indexes</h3>
+
+<table class="dataTable">
+<tr><th>Name</th><th>Type</th><th>columns</th></tr>
+{{#fields}}
+{{#isSQLType "SQLIndex"}}
+
+<tr>
+<td>{{name}}</td><td> {{indexType}}</td>
+<td>
+
+{{#each fieldList}}
+{{name}}{{#unless @last}},{{/unless}}
+{{/each}}
+
+
+</td></tr>
+{{/isSQLType}}
+{{/fields}}
+</table>
+
+
+
+
+{{/container.objectList}}
+
 
 </div>
 </div>

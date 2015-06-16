@@ -89,7 +89,16 @@ int main(int argc, const char * argv[]) {
         [testField2 setComment:@"hello world"];
         
         
-        [table2 add:[SQLIndex indexWithName:@"test_idx"]];
+        SQLField* table2_field2 = [SQLField fieldWithName:@"t2_id2" type:@"INT(2)"];
+        [table2 add:table2_field2];
+        
+        SQLIndex* idx1 = [SQLIndex indexWithName:@"test_idx"];
+        
+        
+        [idx1 addIndexField:testField2];
+        [idx1 addIndexField:table2_field2];
+        
+        [table2 add:idx1];
         
         
         
@@ -97,6 +106,8 @@ int main(int argc, const char * argv[]) {
         
         
         NSLog(@"result: %@",result);
+        
+        [result writeToFile:@"output.html" atomically:YES encoding:NSUTF8StringEncoding error:nil];
         
     }
     return 0;
