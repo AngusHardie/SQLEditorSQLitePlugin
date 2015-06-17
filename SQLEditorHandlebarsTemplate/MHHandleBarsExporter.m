@@ -3,8 +3,9 @@
 //  SQLEditorHandlebarsTemplate
 //
 //  Created by Angus Hardie on 16/06/2015.
-//  Copyright (c) 2015 MalcolmHardie Solutions. All rights reserved.
+//  Copyright (c) 2015 MalcolmHardie Solutions. 
 //
+//  BSD License Applies
 
 #import "MHHandleBarsExporter.h"
 
@@ -18,8 +19,7 @@
 #import <SQLModel/SQLContainer.h>
 #import <SQLModel/SQLIndex.h>
 #import <SQLModel/SQLForeignKey.h>
-#import <SQLModel/MHMutableNotifyingPropertyDictionary.h>
-
+#import <SQLModel/SQLComment.h>
 
 @interface SQLContainer (handlebars)
 + (NSArray*) validKeysForHandlebars;
@@ -32,6 +32,22 @@
     
     
     return @[@"objectList",@"properties"];
+    
+}
+
+@end
+
+@interface SQLComment (handlebars)
++ (NSArray*) validKeysForHandlebars;
+@end
+
+@implementation SQLComment (handlebars)
+
++ (NSArray*) validKeysForHandlebars
+{
+    
+    
+    return @[@"name",@"comment",@"properties"];
     
 }
 
@@ -63,7 +79,23 @@
 {
     
     
-    return @[@"name",@"type",@"primaryKey",@"isUnique",@"notNull",@"defaultValue",@"getAutoIncrement",@"properties"];
+    return @[@"name",@"type",@"primaryKey",@"parentTable",@"isUnique",@"notNull",@"defaultValue",@"getAutoIncrement",@"getReferencesString",@"fkField",@"properties"];
+    
+}
+
+@end
+
+@interface SQLForeignKey (handlebars)
++ (NSArray*) validKeysForHandlebars;
+@end
+
+@implementation SQLForeignKey (handlebars)
+
++ (NSArray*) validKeysForHandlebars
+{
+    
+    
+    return @[@"name",@"type",@"getTargetTable",@"getSourceList",@"getTargetList",@"properties"];
     
 }
 
@@ -85,21 +117,6 @@
 
 @end
 
-@interface MHMutableNotifyingPropertyDictionary (handlebars)
-- (NSArray*)validDataKeys;
-@end
-
-@implementation MHMutableNotifyingPropertyDictionary (handlebars)
-
-- (NSArray*)validDataKeys
-{
-    
-    return [self allKeys];
-
-    
-}
-
-@end
 
 
 @implementation MHHandleBarsExporter
@@ -132,6 +149,67 @@
 }
 
 
+- (void)registerJavascriptHelpersFromScriptURL:(NSURL*)scriptURL
+{
+    
+    NSError* error = nil;
+    
+    self.jsContext = [[JSContext alloc] init];
+    
+    [self.jsContext setExceptionHandler:^(JSContext * context, JSValue * value) {
+        
+        NSLog(@"Javascript Exception: %@", value);
+    }];
+    
+    
+    NSString* scriptSource = [NSString stringWithContentsOfURL:scriptURL encoding:NSUTF8StringEncoding error:&error];
+
+    
+    [self.jsContext evaluateScript:scriptSource];
+    
+    
+    JSValue* filterList = [self.jsContext[@"filterList"] callWithArguments:@[]];
+    
+    
+    
+    
+    
+    for (id entry in [filterList toArray]) {
+        
+        NSString* methodName = [entry copy];
+        
+        __weak  JSContext* context = self.jsContext;
+        
+        HBHelperBlock helperBlock = ^(HBHelperCallingInfo* callingInfo)
+        {
+            
+            //NSLog(@"%@ parameters = %@",methodName,callingInfo[0]);
+            
+            
+            NSMutableArray* args = [NSMutableArray array];
+            
+            for (id entry in [callingInfo positionalParameters]) {
+                
+                
+                [args addObject:[JSValue valueWithObject:entry inContext:self.jsContext]];
+            }
+            
+            return [[context[methodName] callWithArguments:args] toString];
+        };
+        
+        [HBHandlebars registerHelperBlock:helperBlock forName:methodName];
+
+        
+        context = nil;
+        
+    }
+    
+    
+    
+    
+}
+
+
 - (NSString*)exportContainer:(id)container withDocumentInfo:(id)documentInfo;
 {
     
@@ -140,13 +218,19 @@
     
     NSError* error = nil;
     
-     NSURL* templateURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"report" withExtension:@"template"];
+    NSURL* templateURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"report" withExtension:@"template"];
+    NSURL* scriptURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"report" withExtension:@"js"];
+
+    
+
     
     
     NSString* templateSource = [NSString stringWithContentsOfURL:templateURL encoding:NSUTF8StringEncoding error:&error];
     
     
-    
+    if (scriptURL) {
+        [self registerJavascriptHelpersFromScriptURL:scriptURL];
+    }
     
     id context = @{ @"container":container};
     
@@ -158,6 +242,15 @@
     
     
     return resultString;
+}
+
+
+// hack for older SQLEditor versions
+// this method may get called, just return NO
+- (BOOL)shouldQuoteDefaultFieldValue
+{
+    
+    return NO;
 }
 
 @end

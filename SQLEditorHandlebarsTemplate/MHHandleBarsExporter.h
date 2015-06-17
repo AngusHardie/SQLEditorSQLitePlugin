@@ -3,8 +3,9 @@
 //  SQLEditorHandlebarsTemplate
 //
 //  Created by Angus Hardie on 16/06/2015.
-//  Copyright (c) 2015 MalcolmHardie Solutions. All rights reserved.
+//  Copyright (c) 2015 MalcolmHardie Solutions.
 //
+//  BSD License Applies
 
 #import <Foundation/Foundation.h>
 
@@ -15,4 +16,8 @@
 
 
 @property (retain) JSContext* jsContext;
+
+- (NSString*)exportContainer:(id)container withDocumentInfo:(id)documentInfo;
+
+
 @end

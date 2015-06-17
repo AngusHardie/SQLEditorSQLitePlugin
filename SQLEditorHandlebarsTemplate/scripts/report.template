@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+{{!
+
+SQLEditor HTML (Single page) template
+
+Copyright 2015 - MalcolmHardie Solutions Limited
+
+BSD License applies
+
+}}<!DOCTYPE html>
 
 <html>
 <head>
@@ -39,9 +47,13 @@ padding:0.25em;
 
 
 {{#container.objectList}}
+
+{{#isSQLType "SQLTable"}}
 <hr>
 
 <h2>{{fullyQualifiedName}}</h2>
+
+
 
 <h3>Columns</h3>
 
@@ -67,6 +79,8 @@ padding:0.25em;
 {{/fields}}
 </table>
 
+
+
 <h3>Indexes</h3>
 
 <table class="dataTable">
@@ -88,11 +102,78 @@ padding:0.25em;
 {{/fields}}
 </table>
 
+{{! start of Foreign key section }}
+
+<h3>Foreign Keys</h3>
+
+<table class="dataTable">
+<tr><th>Name</th><th>Columns</th><th>References</th></tr>
+{{#fields}}
+{{#isSQLType "SQLField"}}
+
+{{#if getReferencesString}}
+
+<tr>
+    <td> - </td>
+    <td>{{name}}</td>
+    <td>{{fkField.parentTable.name}}({{fkField.name}})</td>
+</tr>
+
+{{/if}}
+
+{{/isSQLType}}
+
+{{! foreign key object reference }}
+
+{{#isSQLType "SQLForeignKey"}}
+
+<tr>
+<td>{{name}}</td>
+<td>{{#each getSourceList}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</td>
+<td>{{getTargetTable.name}}({{#each getTargetList}}{{this}}{{#unless @last}}, {{/unless}}{{/each}})</td>
+</tr>
+
+
+{{/isSQLType}}
+{{/fields}}
+</table>
+
+
+{{! end of foreign key section }}
+
+
+
+{{/isSQLType}}
+
+{{#isSQLType "SQLView"}}
+<hr>
+<h2>{{fullyQualifiedName}}</h2>
+<p>This is an SQL View</p>
+
+<p><pre>{{properties.queryString}}<pre></p>
+
+
+
+{{/isSQLType}}
+
+
+{{#isSQLType "SQLComment"}}
+
+<hr>
+
+<h2>{{name}}</h2>
+
+
+<p>{{comment}}</p>
+
+{{/isSQLType}}
 
 
 
 {{/container.objectList}}
 
+
+<hr>
 
 </div>
 </div>

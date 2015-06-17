@@ -3,9 +3,9 @@
 //  SQLReportGenerator
 //
 //  Created by Angus Hardie on 19/03/2015.
-//  Copyright (c) 2015 MalcolmHardie Solutions. All rights reserved.
+//  Copyright (c) 2015 MalcolmHardie Solutions.
 //
-
+//  BSD License applies
 
 
 #import <Foundation/Foundation.h>
@@ -17,6 +17,7 @@
 #import <SQLModel/SQLContainer.h>
 #import <SQLModel/GenericSQLExporter.h>
 #import <SQLModel/SQLIndex.h>
+#import <SQLModel/SQLForeignKey.h>
 
 
 @interface NSObject (plugin)
@@ -103,12 +104,25 @@ int main(int argc, const char * argv[]) {
         
         [table2 add:idx1];
         
+    
+        SQLForeignKey* fk1 = [[SQLForeignKey alloc] init];
+        
+        [fk1 setName:@"FK1"];
+        
+        [table add:fk1];
+        
+        [fk1 setTargetTable:table2];
+        
+        [fk1 addFieldPair:testField1 :testField2];
+        
+        [fk1 addFieldPair:testField6 :table2_field2];
+        
         
         
         NSString* result = [exporter exportContainer:container withDocumentInfo:nil];
         
         
-        NSLog(@"result: %@",result);
+        //NSLog(@"result: %@",result);
         
         [result writeToFile:@"output.html" atomically:YES encoding:NSUTF8StringEncoding error:nil];
         

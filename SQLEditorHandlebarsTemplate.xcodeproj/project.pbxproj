@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE6FD3441B31E0B20086B0DD /* SQLModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EB1B3074B4008037F0 /* SQLModel.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DE6FD3451B31E0BF0086B0DD /* SQLModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EB1B3074B4008037F0 /* SQLModel.framework */; };
 		DECB9C841B31F0ED003C74F2 /* HBHandlebars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEABD5CF1B31F04B00A23E61 /* HBHandlebars.framework */; };
-		DECB9C851B31F0EE003C74F2 /* HBHandlebars.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEABD5CF1B31F04B00A23E61 /* HBHandlebars.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DECFB7E61B30749B008037F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7E51B30749B008037F0 /* main.m */; };
 		DECFB7EC1B3074B4008037F0 /* CocoaOniguruma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */; };
 		DECFB7F01B3074C7008037F0 /* MHHandlebarsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7EF1B3074C7008037F0 /* MHHandlebarsPlugin.m */; };
@@ -19,7 +17,7 @@
 		DECFB7FC1B307643008037F0 /* report.template in Resources */ = {isa = PBXBuildFile; fileRef = DECFB7FB1B307643008037F0 /* report.template */; };
 		DECFB7FF1B30776A008037F0 /* CocoaOniguruma.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */; };
 		DECFB8001B30776A008037F0 /* SQLModel.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB7EB1B3074B4008037F0 /* SQLModel.framework */; };
-		DECFB8041B3078DE008037F0 /* TemplateParser.js in Resources */ = {isa = PBXBuildFile; fileRef = DECFB8031B3078DE008037F0 /* TemplateParser.js */; };
+		DECFB8041B3078DE008037F0 /* report.js in Resources */ = {isa = PBXBuildFile; fileRef = DECFB8031B3078DE008037F0 /* report.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +58,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DECB9C851B31F0EE003C74F2 /* HBHandlebars.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +76,7 @@
 		DECFB7F11B3074F3008037F0 /* MHHandleBarsExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHHandleBarsExporter.h; sourceTree = "<group>"; };
 		DECFB7F21B3074F3008037F0 /* MHHandleBarsExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHHandleBarsExporter.m; sourceTree = "<group>"; };
 		DECFB7FB1B307643008037F0 /* report.template */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = report.template; sourceTree = "<group>"; };
-		DECFB8031B3078DE008037F0 /* TemplateParser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = TemplateParser.js; sourceTree = "<group>"; };
+		DECFB8031B3078DE008037F0 /* report.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = report.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE6FD3441B31E0B20086B0DD /* SQLModel.framework in Frameworks */,
 				DECB9C841B31F0ED003C74F2 /* HBHandlebars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,7 +161,7 @@
 		DECFB7F81B307565008037F0 /* scripts */ = {
 			isa = PBXGroup;
 			children = (
-				DECFB8031B3078DE008037F0 /* TemplateParser.js */,
+				DECFB8031B3078DE008037F0 /* report.js */,
 				DECFB7FB1B307643008037F0 /* report.template */,
 			);
 			path = scripts;
@@ -252,7 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DECFB7FC1B307643008037F0 /* report.template in Resources */,
-				DECFB8041B3078DE008037F0 /* TemplateParser.js in Resources */,
+				DECFB8041B3078DE008037F0 /* report.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,17 +364,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SQLTestTool",
 					"$(PROJECT_DIR)/SQLEditorHandlebarsTemplate",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SQLEditorHandlebarsTemplate-aawsgbqngvtuladoaavrkqapkkkv/Build/Products/Debug",
-					"$(PROJECT_DIR)/vendor/handlebars-objc/src/build/Debug",
 					"$(PROJECT_DIR)/DerivedData/SQLEditorHandlebarsTemplate/Build/Products/Debug",
 				);
 				INFOPLIST_FILE = SQLEditorHandlebarsTemplate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../frameworks/";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../frameworks/ @loader_path/../../../";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-undefined",
@@ -395,17 +391,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SQLTestTool",
 					"$(PROJECT_DIR)/SQLEditorHandlebarsTemplate",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SQLEditorHandlebarsTemplate-aawsgbqngvtuladoaavrkqapkkkv/Build/Products/Debug",
-					"$(PROJECT_DIR)/vendor/handlebars-objc/src/build/Debug",
 					"$(PROJECT_DIR)/DerivedData/SQLEditorHandlebarsTemplate/Build/Products/Debug",
 				);
 				INFOPLIST_FILE = SQLEditorHandlebarsTemplate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../frameworks/";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../frameworks/ @loader_path/../../../";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-undefined",
