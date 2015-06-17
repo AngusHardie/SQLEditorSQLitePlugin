@@ -20,6 +20,7 @@
 @interface NSObject (modelContainer)
 - (SQLContainer*)getContainer;
 - (SQLContainer*)container;
+- (id)getDocumentInfo;
 @end
 
 
@@ -87,28 +88,16 @@
     return [[MHHandleBarsExporter alloc] init];
 }
 
-//- (BOOL)exportContainer:(id)container toFileURL:(NSURL *)outputURL
-//{
-//    id plugin = [self exporter];
-//    
-//    
-//    [plugin exportContainer:container toFileURL:outputURL];
-//    
-//    return YES;
-//    
-//}
-//
-//- (BOOL)exportDocument:(id)document toPath:(id)fileSavePath options:(id)exportOptions
-//{
-//    
-//    
-//    
-//    id container = [[document model] container];
-//    
-//    
-//    return [self exportContainer:container toFileURL:[NSURL fileURLWithPath:fileSavePath]];
-//    
-//    
-//}
+
+
+- (NSString*)exportDocument:(id)document
+{
+    
+    id container = [[document model] container];
+    
+    return [[self exporter] exportContainer:container withDocumentInfo:[[document model] getDocumentInfo]];
+    
+}
+
 
 @end

@@ -15,4 +15,8 @@
 
 
 @property (retain) JSContext* jsContext;
+
+- (NSString*)exportContainer:(id)container withDocumentInfo:(id)documentInfo;
+
+
 @end

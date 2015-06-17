@@ -39,9 +39,13 @@ padding:0.25em;
 
 
 {{#container.objectList}}
+
+{{#isSQLType "SQLTable"}}
 <hr>
 
 <h2>{{fullyQualifiedName}}</h2>
+
+
 
 <h3>Columns</h3>
 
@@ -67,6 +71,8 @@ padding:0.25em;
 {{/fields}}
 </table>
 
+
+
 <h3>Indexes</h3>
 
 <table class="dataTable">
@@ -88,6 +94,34 @@ padding:0.25em;
 {{/fields}}
 </table>
 
+
+
+
+
+{{/isSQLType}}
+
+{{#isSQLType "SQLView"}}
+<hr>
+<h2>{{fullyQualifiedName}}</h2>
+<p>This is an SQL View</p>
+
+<p><pre>{{properties.queryString}}<pre></p>
+
+
+
+{{/isSQLType}}
+
+
+{{#isSQLType "SQLComment"}}
+
+<hr>
+
+<h2>{{name}}</h2>
+
+
+<p>{{comment}}</p>
+
+{{/isSQLType}}
 
 
 

@@ -18,8 +18,7 @@
 #import <SQLModel/SQLContainer.h>
 #import <SQLModel/SQLIndex.h>
 #import <SQLModel/SQLForeignKey.h>
-#import <SQLModel/MHMutableNotifyingPropertyDictionary.h>
-
+#import <SQLModel/SQLComment.h>
 
 @interface SQLContainer (handlebars)
 + (NSArray*) validKeysForHandlebars;
@@ -32,6 +31,22 @@
     
     
     return @[@"objectList",@"properties"];
+    
+}
+
+@end
+
+@interface SQLComment (handlebars)
++ (NSArray*) validKeysForHandlebars;
+@end
+
+@implementation SQLComment (handlebars)
+
++ (NSArray*) validKeysForHandlebars
+{
+    
+    
+    return @[@"name",@"comment",@"properties"];
     
 }
 
@@ -85,21 +100,6 @@
 
 @end
 
-@interface MHMutableNotifyingPropertyDictionary (handlebars)
-- (NSArray*)validDataKeys;
-@end
-
-@implementation MHMutableNotifyingPropertyDictionary (handlebars)
-
-- (NSArray*)validDataKeys
-{
-    
-    return [self allKeys];
-
-    
-}
-
-@end
 
 
 @implementation MHHandleBarsExporter
