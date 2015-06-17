@@ -104,4 +104,8 @@
 
 - (NSPoint)location;
 - (NSSize) size;
+
+
+
+- (NSArray*)flatObjectList;
 @end

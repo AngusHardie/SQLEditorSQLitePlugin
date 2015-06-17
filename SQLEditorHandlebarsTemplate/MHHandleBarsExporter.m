@@ -18,6 +18,7 @@
 #import <SQLModel/SQLContainer.h>
 #import <SQLModel/SQLIndex.h>
 #import <SQLModel/SQLForeignKey.h>
+#import <SQLModel/MHMutableNotifyingPropertyDictionary.h>
 
 
 @interface SQLContainer (handlebars)
@@ -62,7 +63,7 @@
 {
     
     
-    return @[@"name",@"type",@"primaryKey",@"isUnique",@"notNull",@"properties"];
+    return @[@"name",@"type",@"primaryKey",@"isUnique",@"notNull",@"defaultValue",@"getAutoIncrement",@"properties"];
     
 }
 
@@ -79,6 +80,22 @@
     
     
     return @[@"name",@"indexType",@"properties",@"getLabel",@"fieldList"];
+    
+}
+
+@end
+
+@interface MHMutableNotifyingPropertyDictionary (handlebars)
+- (NSArray*)validDataKeys;
+@end
+
+@implementation MHMutableNotifyingPropertyDictionary (handlebars)
+
+- (NSArray*)validDataKeys
+{
+    
+    return [self allKeys];
+
     
 }
 

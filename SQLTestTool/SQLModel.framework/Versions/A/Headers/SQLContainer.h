@@ -20,6 +20,8 @@
 
 @class MHSparseMutableArray;
 
+@class SQLSchema;
+
 /**
 	SQLContainer is the main container class for documents
  It accepts different types of SQLObject and works in conjunction with SQLSchemaView to display them
@@ -54,6 +56,8 @@ EXPORT_SYMBOL_EXTERNAL
 }
 
 @property (retain) NSArray* importErrors;
+
+@property (retain) NSMutableArray* schemaList;
 
 - (SQLObjectLabelManager*)objectLabelManager;
 
@@ -148,7 +152,13 @@ EXPORT_SYMBOL_EXTERNAL
 - (NSArray*)objectListSortedByUid;
 - (NSArray*)objectListSortedByZOrder;
 - (NSArray*)objectListSortedByName;
+- (NSArray*)flatObjectList;
 - (void)reorderByZOrder;
+
+//schema list support
+- (NSArray*)objectsWithSchema:(SQLSchema*)schema;
+- (NSArray*)listOfSchema;
+- (void)updateSchemaForObject:(SQLObject*)object;
 
 - (void)removeUidForObject:(id)object;
 - (void)addUidForObject:(id)object;

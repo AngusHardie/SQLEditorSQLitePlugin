@@ -112,6 +112,8 @@ EXPORT_SYMBOL_EXTERNAL
 - (void)remove:(SQLTableComponent*)field ;
 
 - (NSString*)fullyQualifiedName;
+- (void)setFullyQualifiedName:(NSString*)newName;
+
 - (NSString*)displayName;
 - (void)setDisplayName:(NSString*)name;
 

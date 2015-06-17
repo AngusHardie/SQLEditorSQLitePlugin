@@ -17,7 +17,6 @@
 	
 }
 + (MHFileSystemManager*) sharedManager;
-- (NSString *)findSystemFolderType:(int)folderType forDomain:(int)domain;
 
 - (NSString*)applicationSupportDirectory;
 - (BOOL)createApplicationSupportDirectory;

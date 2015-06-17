@@ -53,12 +53,13 @@ padding:0.25em;
     <tr>
 
         <td>{{name}}</td>
-        <td>{{type}}</td>
+        <td>{{type~}}</td>
 
         <td>
-        {{#if primaryKey}}[PK]{{/if}}
-        {{#if isUnique}}[UNIQUE]{{/if}}
-        {{#if notNull}}[NOT NULL]{{/if}}
+        {{~#if primaryKey}}[PK] {{/if~}}
+        {{~#if isUnique}}[UNIQUE] {{/if~}}
+        {{~#if notNull}}[NOT NULL] {{/if~}}
+        {{~#if properties.indexed}}[INDEXED] {{/if~}}
         </td>
     </tr>
 

@@ -68,7 +68,10 @@ int main(int argc, const char * argv[]) {
         [table add:testField5];
         
         
-        SQLField* testField6 = [SQLField fieldWithName:@"id6" type:@"BIT"];
+        SQLField* testField6 = [SQLField fieldWithName:@"id6" type:@"INT"];
+        
+        [testField6 setPropertyAsBoolean:@"indexed" :YES];
+        
         [table add:testField6];
         
         
