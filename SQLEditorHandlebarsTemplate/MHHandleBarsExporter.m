@@ -132,6 +132,67 @@
 }
 
 
+- (void)registerJavascriptHelpersFromScriptURL:(NSURL*)scriptURL
+{
+    
+    NSError* error = nil;
+    
+    self.jsContext = [[JSContext alloc] init];
+    
+    [self.jsContext setExceptionHandler:^(JSContext * context, JSValue * value) {
+        
+        NSLog(@"Javascript Exception: %@", value);
+    }];
+    
+    
+    NSString* scriptSource = [NSString stringWithContentsOfURL:scriptURL encoding:NSUTF8StringEncoding error:&error];
+
+    
+    [self.jsContext evaluateScript:scriptSource];
+    
+    
+    JSValue* filterList = [self.jsContext[@"filterList"] callWithArguments:@[]];
+    
+    
+    
+    
+    
+    for (id entry in [filterList toArray]) {
+        
+        NSString* methodName = [entry copy];
+        
+        __weak  JSContext* context = self.jsContext;
+        
+        HBHelperBlock helperBlock = ^(HBHelperCallingInfo* callingInfo)
+        {
+            
+            //NSLog(@"%@ parameters = %@",methodName,callingInfo[0]);
+            
+            
+            NSMutableArray* args = [NSMutableArray array];
+            
+            for (id entry in [callingInfo positionalParameters]) {
+                
+                
+                [args addObject:[JSValue valueWithObject:entry inContext:self.jsContext]];
+            }
+            
+            return [[context[methodName] callWithArguments:args] toString];
+        };
+        
+        [HBHandlebars registerHelperBlock:helperBlock forName:methodName];
+
+        
+        context = nil;
+        
+    }
+    
+    
+    
+    
+}
+
+
 - (NSString*)exportContainer:(id)container withDocumentInfo:(id)documentInfo;
 {
     
@@ -140,12 +201,18 @@
     
     NSError* error = nil;
     
-     NSURL* templateURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"report" withExtension:@"template"];
+    NSURL* templateURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"report" withExtension:@"template"];
+    NSURL* scriptURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"report" withExtension:@"js"];
+
+    
+
     
     
     NSString* templateSource = [NSString stringWithContentsOfURL:templateURL encoding:NSUTF8StringEncoding error:&error];
     
     
+    
+    [self registerJavascriptHelpersFromScriptURL:scriptURL];
     
     
     id context = @{ @"container":container};
