@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"Plugin types = %@",[[SQLPluginManager sharedPluginManager] supportedExportTypes]);
         
-        id reportPlugin = [[SQLPluginManager sharedPluginManager] exportPluginForType:@"HTML Single Page Exporter"];
+        id reportPlugin = [[SQLPluginManager sharedPluginManager] exportPluginForType:@"SQLite Example Plugin"];
         
         
         id exporter = [reportPlugin exporter];
@@ -49,7 +49,7 @@ int main(int argc, const char * argv[]) {
         
         SQLTable* table = [SQLTable tableWithName:@"test"];
         
-        [table setSchemaName:@"A1"];
+       // [table setSchemaName:@"A1"];
         
         [container add:table];
         
@@ -124,7 +124,7 @@ int main(int argc, const char * argv[]) {
         
         //NSLog(@"result: %@",result);
         
-        [result writeToFile:@"output.html" atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        [result writeToFile:@"output.sql" atomically:YES encoding:NSUTF8StringEncoding error:nil];
         
     }
     return 0;
