@@ -46,7 +46,7 @@
 {
     
     
-    return @[@"fullyQualifiedName",@"name",@"tableType",@"fields",@"properties"];
+    return @[@"fullyQualifiedName",@"name",@"schemaName",@"tableType",@"fields",@"properties"];
     
 }
 

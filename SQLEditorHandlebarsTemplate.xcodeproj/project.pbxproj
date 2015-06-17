@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F02AA31F3C77FC330C1FA97 /* libPods-SQLEditorHandlebarsTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DA1E8BEC2FD62E888406F7 /* libPods-SQLEditorHandlebarsTemplate.a */; };
 		DECFB7E61B30749B008037F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7E51B30749B008037F0 /* main.m */; };
 		DECFB7EC1B3074B4008037F0 /* CocoaOniguruma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */; };
 		DECFB7ED1B3074B4008037F0 /* SQLModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EB1B3074B4008037F0 /* SQLModel.framework */; };
@@ -18,8 +19,6 @@
 		DECFB7FF1B30776A008037F0 /* CocoaOniguruma.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */; };
 		DECFB8001B30776A008037F0 /* SQLModel.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB7EB1B3074B4008037F0 /* SQLModel.framework */; };
 		DECFB8041B3078DE008037F0 /* TemplateParser.js in Resources */ = {isa = PBXBuildFile; fileRef = DECFB8031B3078DE008037F0 /* TemplateParser.js */; };
-		DECFB80C1B309944008037F0 /* HBHandlebars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB80B1B309944008037F0 /* HBHandlebars.framework */; };
-		DECFB80D1B309952008037F0 /* HBHandlebars.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB80B1B309944008037F0 /* HBHandlebars.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,13 +59,15 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DECFB80D1B309952008037F0 /* HBHandlebars.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		05B8148ADFDB49BB9B2C1340 /* Pods-SQLEditorHandlebarsTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLEditorHandlebarsTemplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQLEditorHandlebarsTemplate/Pods-SQLEditorHandlebarsTemplate.debug.xcconfig"; sourceTree = "<group>"; };
+		2D22F3ABF6B564C5106C082E /* Pods-SQLEditorHandlebarsTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLEditorHandlebarsTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQLEditorHandlebarsTemplate/Pods-SQLEditorHandlebarsTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		D8DA1E8BEC2FD62E888406F7 /* libPods-SQLEditorHandlebarsTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQLEditorHandlebarsTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFB7D51B307488008037F0 /* SQLEditorHandlebarsTemplate.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQLEditorHandlebarsTemplate.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFB7D91B307488008037F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECFB7E31B30749B008037F0 /* SQLTestTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SQLTestTool; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +80,6 @@
 		DECFB7F21B3074F3008037F0 /* MHHandleBarsExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHHandleBarsExporter.m; sourceTree = "<group>"; };
 		DECFB7FB1B307643008037F0 /* report.template */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = report.template; sourceTree = "<group>"; };
 		DECFB8031B3078DE008037F0 /* TemplateParser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = TemplateParser.js; sourceTree = "<group>"; };
-		DECFB80B1B309944008037F0 /* HBHandlebars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HBHandlebars.framework; path = frameworks/HBHandlebars.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECFB80C1B309944008037F0 /* HBHandlebars.framework in Frameworks */,
 				DECFB7FD1B30771C008037F0 /* SQLModel.framework in Frameworks */,
+				4F02AA31F3C77FC330C1FA97 /* libPods-SQLEditorHandlebarsTemplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,12 +104,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F33057429C3B606C09D3661 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8DA1E8BEC2FD62E888406F7 /* libPods-SQLEditorHandlebarsTemplate.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D03CF893F4A446772DC40189 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05B8148ADFDB49BB9B2C1340 /* Pods-SQLEditorHandlebarsTemplate.debug.xcconfig */,
+				2D22F3ABF6B564C5106C082E /* Pods-SQLEditorHandlebarsTemplate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DECFB7CC1B307488008037F0 = {
 			isa = PBXGroup;
 			children = (
 				DECFB7D71B307488008037F0 /* SQLEditorHandlebarsTemplate */,
 				DECFB7E41B30749B008037F0 /* SQLTestTool */,
 				DECFB7D61B307488008037F0 /* Products */,
+				D03CF893F4A446772DC40189 /* Pods */,
+				5F33057429C3B606C09D3661 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +144,11 @@
 		DECFB7D71B307488008037F0 /* SQLEditorHandlebarsTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DECFB7EE1B3074C7008037F0 /* MHHandlebarsPlugin.h */,
+				DECFB7EF1B3074C7008037F0 /* MHHandlebarsPlugin.m */,
+				DECFB7F11B3074F3008037F0 /* MHHandleBarsExporter.h */,
+				DECFB7F21B3074F3008037F0 /* MHHandleBarsExporter.m */,
+				DECFB7F81B307565008037F0 /* scripts */,
 				DECFB7D81B307488008037F0 /* Supporting Files */,
 			);
 			path = SQLEditorHandlebarsTemplate;
@@ -133,13 +157,7 @@
 		DECFB7D81B307488008037F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DECFB80B1B309944008037F0 /* HBHandlebars.framework */,
 				DECFB7D91B307488008037F0 /* Info.plist */,
-				DECFB7EE1B3074C7008037F0 /* MHHandlebarsPlugin.h */,
-				DECFB7EF1B3074C7008037F0 /* MHHandlebarsPlugin.m */,
-				DECFB7F11B3074F3008037F0 /* MHHandleBarsExporter.h */,
-				DECFB7F21B3074F3008037F0 /* MHHandleBarsExporter.m */,
-				DECFB7F81B307565008037F0 /* scripts */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -170,10 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DECFB7DC1B307488008037F0 /* Build configuration list for PBXNativeTarget "SQLEditorHandlebarsTemplate" */;
 			buildPhases = (
+				D577EAC6A515A2D0A2177A7C /* Check Pods Manifest.lock */,
 				DECFB7D11B307488008037F0 /* Sources */,
 				DECFB7D21B307488008037F0 /* Frameworks */,
 				DECFB7D31B307488008037F0 /* Resources */,
 				DECFB8091B30983B008037F0 /* CopyFiles */,
+				CF6D72DC294B872586286F7B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +269,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CF6D72DC294B872586286F7B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SQLEditorHandlebarsTemplate/Pods-SQLEditorHandlebarsTemplate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D577EAC6A515A2D0A2177A7C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DECFB7D11B307488008037F0 /* Sources */ = {
@@ -358,6 +411,7 @@
 		};
 		DECFB7DD1B307488008037F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05B8148ADFDB49BB9B2C1340 /* Pods-SQLEditorHandlebarsTemplate.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -370,6 +424,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../frameworks/";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-undefined",
 					dynamic_lookup,
 					"-ObjC",
@@ -382,6 +437,7 @@
 		};
 		DECFB7DE1B307488008037F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D22F3ABF6B564C5106C082E /* Pods-SQLEditorHandlebarsTemplate.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -394,6 +450,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../frameworks/";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-undefined",
 					dynamic_lookup,
 					"-ObjC",
@@ -451,6 +508,7 @@
 				DECFB7DE1B307488008037F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DECFB7E71B30749B008037F0 /* Build configuration list for PBXNativeTarget "SQLTestTool" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +517,7 @@
 				DECFB7E91B30749B008037F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
