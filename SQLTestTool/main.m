@@ -3,9 +3,9 @@
 //  SQLReportGenerator
 //
 //  Created by Angus Hardie on 19/03/2015.
-//  Copyright (c) 2015 MalcolmHardie Solutions. All rights reserved.
+//  Copyright (c) 2015 MalcolmHardie Solutions.
 //
-
+//  BSD License applies
 
 
 #import <Foundation/Foundation.h>
@@ -17,6 +17,7 @@
 #import <SQLModel/SQLContainer.h>
 #import <SQLModel/GenericSQLExporter.h>
 #import <SQLModel/SQLIndex.h>
+#import <SQLModel/SQLForeignKey.h>
 
 
 @interface NSObject (plugin)
