@@ -17,7 +17,7 @@
                BlueprintIdentifier = "DECFB7E21B30749B008037F0"
                BuildableName = "SQLTestTool"
                BlueprintName = "SQLTestTool"
-               ReferencedContainer = "container:SQLEditorHandlebarsTemplate.xcodeproj">
+               ReferencedContainer = "container:SQLEditorSQLiteExamplePlugin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "DECFB7E21B30749B008037F0"
             BuildableName = "SQLTestTool"
             BlueprintName = "SQLTestTool"
-            ReferencedContainer = "container:SQLEditorHandlebarsTemplate.xcodeproj">
+            ReferencedContainer = "container:SQLEditorSQLiteExamplePlugin.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "DECFB7E21B30749B008037F0"
             BuildableName = "SQLTestTool"
             BlueprintName = "SQLTestTool"
-            ReferencedContainer = "container:SQLEditorHandlebarsTemplate.xcodeproj">
+            ReferencedContainer = "container:SQLEditorSQLiteExamplePlugin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,7 +74,7 @@
             BlueprintIdentifier = "DECFB7E21B30749B008037F0"
             BuildableName = "SQLTestTool"
             BlueprintName = "SQLTestTool"
-            ReferencedContainer = "container:SQLEditorHandlebarsTemplate.xcodeproj">
+            ReferencedContainer = "container:SQLEditorSQLiteExamplePlugin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

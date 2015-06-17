@@ -11,9 +11,9 @@
 		DECB9C841B31F0ED003C74F2 /* HBHandlebars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEABD5CF1B31F04B00A23E61 /* HBHandlebars.framework */; };
 		DECFB7E61B30749B008037F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7E51B30749B008037F0 /* main.m */; };
 		DECFB7EC1B3074B4008037F0 /* CocoaOniguruma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */; };
-		DECFB7F01B3074C7008037F0 /* MHHandlebarsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7EF1B3074C7008037F0 /* MHHandlebarsPlugin.m */; };
-		DECFB7F31B3074F3008037F0 /* MHHandleBarsExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7F21B3074F3008037F0 /* MHHandleBarsExporter.m */; };
-		DECFB7F51B307544008037F0 /* SQLEditorHandlebarsTemplate.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB7D51B307488008037F0 /* SQLEditorHandlebarsTemplate.bundle */; };
+		DECFB7F01B3074C7008037F0 /* MHSQLiteExamplePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7EF1B3074C7008037F0 /* MHSQLiteExamplePlugin.m */; };
+		DECFB7F31B3074F3008037F0 /* MHSQLiteExampleExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7F21B3074F3008037F0 /* MHSQLiteExampleExporter.m */; };
+		DECFB7F51B307544008037F0 /* SQLEditorSQLiteExamplePlugin.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB7D51B307488008037F0 /* SQLEditorSQLiteExamplePlugin.bundle */; };
 		DECFB7FC1B307643008037F0 /* report.template in Resources */ = {isa = PBXBuildFile; fileRef = DECFB7FB1B307643008037F0 /* report.template */; };
 		DECFB7FF1B30776A008037F0 /* CocoaOniguruma.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */; };
 		DECFB8001B30776A008037F0 /* SQLModel.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DECFB7EB1B3074B4008037F0 /* SQLModel.framework */; };
@@ -37,7 +37,7 @@
 			dstPath = Contents/Plugins;
 			dstSubfolderSpec = 16;
 			files = (
-				DECFB7F51B307544008037F0 /* SQLEditorHandlebarsTemplate.bundle in CopyFiles */,
+				DECFB7F51B307544008037F0 /* SQLEditorSQLiteExamplePlugin.bundle in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,16 +65,16 @@
 
 /* Begin PBXFileReference section */
 		DEABD5CF1B31F04B00A23E61 /* HBHandlebars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HBHandlebars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DECFB7D51B307488008037F0 /* SQLEditorHandlebarsTemplate.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQLEditorHandlebarsTemplate.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		DECFB7D51B307488008037F0 /* SQLEditorSQLiteExamplePlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQLEditorSQLiteExamplePlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFB7D91B307488008037F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECFB7E31B30749B008037F0 /* SQLTestTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SQLTestTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFB7E51B30749B008037F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaOniguruma.framework; sourceTree = "<group>"; };
 		DECFB7EB1B3074B4008037F0 /* SQLModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SQLModel.framework; sourceTree = "<group>"; };
-		DECFB7EE1B3074C7008037F0 /* MHHandlebarsPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHHandlebarsPlugin.h; sourceTree = "<group>"; };
-		DECFB7EF1B3074C7008037F0 /* MHHandlebarsPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHHandlebarsPlugin.m; sourceTree = "<group>"; };
-		DECFB7F11B3074F3008037F0 /* MHHandleBarsExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHHandleBarsExporter.h; sourceTree = "<group>"; };
-		DECFB7F21B3074F3008037F0 /* MHHandleBarsExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHHandleBarsExporter.m; sourceTree = "<group>"; };
+		DECFB7EE1B3074C7008037F0 /* MHSQLiteExamplePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHSQLiteExamplePlugin.h; sourceTree = "<group>"; };
+		DECFB7EF1B3074C7008037F0 /* MHSQLiteExamplePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHSQLiteExamplePlugin.m; sourceTree = "<group>"; };
+		DECFB7F11B3074F3008037F0 /* MHSQLiteExampleExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHSQLiteExampleExporter.h; sourceTree = "<group>"; };
+		DECFB7F21B3074F3008037F0 /* MHSQLiteExampleExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHSQLiteExampleExporter.m; sourceTree = "<group>"; };
 		DECFB7FB1B307643008037F0 /* report.template */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = report.template; sourceTree = "<group>"; };
 		DECFB8031B3078DE008037F0 /* report.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = report.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +121,7 @@
 		DECFB7D61B307488008037F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DECFB7D51B307488008037F0 /* SQLEditorHandlebarsTemplate.bundle */,
+				DECFB7D51B307488008037F0 /* SQLEditorSQLiteExamplePlugin.bundle */,
 				DECFB7E31B30749B008037F0 /* SQLTestTool */,
 			);
 			name = Products;
@@ -130,10 +130,10 @@
 		DECFB7D71B307488008037F0 /* SQLEditorHandlebarsTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				DECFB7EE1B3074C7008037F0 /* MHHandlebarsPlugin.h */,
-				DECFB7EF1B3074C7008037F0 /* MHHandlebarsPlugin.m */,
-				DECFB7F11B3074F3008037F0 /* MHHandleBarsExporter.h */,
-				DECFB7F21B3074F3008037F0 /* MHHandleBarsExporter.m */,
+				DECFB7EE1B3074C7008037F0 /* MHSQLiteExamplePlugin.h */,
+				DECFB7EF1B3074C7008037F0 /* MHSQLiteExamplePlugin.m */,
+				DECFB7F11B3074F3008037F0 /* MHSQLiteExampleExporter.h */,
+				DECFB7F21B3074F3008037F0 /* MHSQLiteExampleExporter.m */,
 				DECFB7F81B307565008037F0 /* scripts */,
 				DECFB7D81B307488008037F0 /* Supporting Files */,
 			);
@@ -170,9 +170,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DECFB7D41B307488008037F0 /* SQLEditorHandlebarsTemplate */ = {
+		DECFB7D41B307488008037F0 /* SQLEditorSQLiteExamplePlugin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DECFB7DC1B307488008037F0 /* Build configuration list for PBXNativeTarget "SQLEditorHandlebarsTemplate" */;
+			buildConfigurationList = DECFB7DC1B307488008037F0 /* Build configuration list for PBXNativeTarget "SQLEditorSQLiteExamplePlugin" */;
 			buildPhases = (
 				DECFB7D11B307488008037F0 /* Sources */,
 				DECFB7D21B307488008037F0 /* Frameworks */,
@@ -183,9 +183,9 @@
 			);
 			dependencies = (
 			);
-			name = SQLEditorHandlebarsTemplate;
+			name = SQLEditorSQLiteExamplePlugin;
 			productName = SQLEditorHandlebarsTemplate;
-			productReference = DECFB7D51B307488008037F0 /* SQLEditorHandlebarsTemplate.bundle */;
+			productReference = DECFB7D51B307488008037F0 /* SQLEditorSQLiteExamplePlugin.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		DECFB7E21B30749B008037F0 /* SQLTestTool */ = {
@@ -224,7 +224,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DECFB7D01B307488008037F0 /* Build configuration list for PBXProject "SQLEditorHandlebarsTemplate" */;
+			buildConfigurationList = DECFB7D01B307488008037F0 /* Build configuration list for PBXProject "SQLEditorSQLiteExamplePlugin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -237,7 +237,7 @@
 			projectRoot = "";
 			targets = (
 				DECFB7E21B30749B008037F0 /* SQLTestTool */,
-				DECFB7D41B307488008037F0 /* SQLEditorHandlebarsTemplate */,
+				DECFB7D41B307488008037F0 /* SQLEditorSQLiteExamplePlugin */,
 			);
 		};
 /* End PBXProject section */
@@ -259,8 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECFB7F01B3074C7008037F0 /* MHHandlebarsPlugin.m in Sources */,
-				DECFB7F31B3074F3008037F0 /* MHHandleBarsExporter.m in Sources */,
+				DECFB7F01B3074C7008037F0 /* MHSQLiteExamplePlugin.m in Sources */,
+				DECFB7F31B3074F3008037F0 /* MHSQLiteExampleExporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +277,7 @@
 /* Begin PBXTargetDependency section */
 		DECFB7F71B307548008037F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DECFB7D41B307488008037F0 /* SQLEditorHandlebarsTemplate */;
+			target = DECFB7D41B307488008037F0 /* SQLEditorSQLiteExamplePlugin */;
 			targetProxy = DECFB7F61B307548008037F0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -381,7 +381,7 @@
 					dynamic_lookup,
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -408,7 +408,7 @@
 					dynamic_lookup,
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -445,7 +445,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DECFB7D01B307488008037F0 /* Build configuration list for PBXProject "SQLEditorHandlebarsTemplate" */ = {
+		DECFB7D01B307488008037F0 /* Build configuration list for PBXProject "SQLEditorSQLiteExamplePlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DECFB7DA1B307488008037F0 /* Debug */,
@@ -454,7 +454,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DECFB7DC1B307488008037F0 /* Build configuration list for PBXNativeTarget "SQLEditorHandlebarsTemplate" */ = {
+		DECFB7DC1B307488008037F0 /* Build configuration list for PBXNativeTarget "SQLEditorSQLiteExamplePlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DECFB7DD1B307488008037F0 /* Debug */,

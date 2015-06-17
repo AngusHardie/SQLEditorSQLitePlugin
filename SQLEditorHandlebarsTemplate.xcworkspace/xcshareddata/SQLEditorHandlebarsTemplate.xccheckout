@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>60ECB19A334F34AF4F249A39697569B1E9F62835</key>
-		<string>..vendor/handlebars-objc/</string>
+		<string>..vendor/handlebars-objc</string>
 		<key>A6BF6DFCB6281ADECA98EBF5342D3392C7DA5DA1</key>
 		<string>..</string>
 	</dict>
