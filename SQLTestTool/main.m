@@ -108,7 +108,7 @@ int main(int argc, const char * argv[]) {
         NSString* result = [exporter exportContainer:container withDocumentInfo:nil];
         
         
-        NSLog(@"result: %@",result);
+        //NSLog(@"result: %@",result);
         
         [result writeToFile:@"output.html" atomically:YES encoding:NSUTF8StringEncoding error:nil];
         
