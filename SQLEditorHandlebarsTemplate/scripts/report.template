@@ -1,181 +1,46 @@
 {{!
 
-SQLEditor HTML (Single page) template
+SQLEditor SQL example template
 
 Copyright 2015 - MalcolmHardie Solutions Limited
 
 BSD License applies
 
-}}<!DOCTYPE html>
+}}
 
-<html>
-<head>
-<title>SQLEditor: Report</title>
-<style>
-body {
+/* SQLEditor - SQLite Template output */
 
-font-family:sans-serif;
-
-}
-
-table.dataTable {
-
-border-collapse:collapse;
-}
-
-table.dataTable th
-{
-
-background:black;
-color:white;
-font-weight:normal;
-}
-
-table.dataTable th, table.dataTable td {
-border: 1px solid black;
-padding:0.25em;
-}
+{{#each container.tables~}}
 
 
-</style>
-</head>
+CREATE TABLE {{fullyQualifiedName}}
+(
+{{#each columns~}}
+{{name}} {{type}}
+{{~#if primaryKey}} PRIMARY KEY{{/if~}}
+{{~#if isUnique}} UNIQUE{{/if~}}
+{{~#if notNull}} NOT NULL{{/if~}}
+{{~#if properties.indexed}} {{/if~}}
+{{#if getReferencesString}} REFERENCES {{fkField.parentTable.name}}({{fkField.name}}){{/if~}}
+{{~#unless @last}},
+{{/unless}}
+{{~/each~}}
+{{~#each foreignKeys~}}
+,
+FOREIGN KEY ({{sourceListString}}) REFERENCES {{targetListString}})
+{{~/each}}
+);
 
-<div class="entry">
-<h1>{{title}}</h1>
-<div class="body">
+{{/each}}
 
-
-
-{{#container.objectList}}
-
-{{#isSQLType "SQLTable"}}
-<hr>
-
-<h2>{{fullyQualifiedName}}</h2>
-
-
-
-<h3>Columns</h3>
-
-
-<table class="dataTable">
-<tr><th>Name</th><th>Type</th><th>options</th></tr>
-{{#fields}}
-{{#isSQLType "SQLField"}}
-    <tr>
-
-        <td>{{name}}</td>
-        <td>{{type~}}</td>
-
-        <td>
-        {{~#if primaryKey}}[PK] {{/if~}}
-        {{~#if isUnique}}[UNIQUE] {{/if~}}
-        {{~#if notNull}}[NOT NULL] {{/if~}}
-        {{~#if properties.indexed}}[INDEXED] {{/if~}}
-        </td>
-    </tr>
-
-{{/isSQLType}}
-{{/fields}}
-</table>
-
-
-
-<h3>Indexes</h3>
-
-<table class="dataTable">
-<tr><th>Name</th><th>Type</th><th>columns</th></tr>
-{{#fields}}
-{{#isSQLType "SQLIndex"}}
-
-<tr>
-<td>{{name}}</td><td> {{indexType}}</td>
-<td>
-
-{{#each fieldList}}
-{{name}}{{#unless @last}},{{/unless}}
+{{#each container.tables~}}
+{{#each indexes~}}
+CREATE INDEX {{name}} ON {{parent.fullyQualifiedName}} ({{~columnListString~}});
+{{/each}}
 {{/each}}
 
 
-</td></tr>
-{{/isSQLType}}
-{{/fields}}
-</table>
-
-{{! start of Foreign key section }}
-
-<h3>Foreign Keys</h3>
-
-<table class="dataTable">
-<tr><th>Name</th><th>Columns</th><th>References</th></tr>
-{{#fields}}
-{{#isSQLType "SQLField"}}
-
-{{#if getReferencesString}}
-
-<tr>
-    <td> - </td>
-    <td>{{name}}</td>
-    <td>{{fkField.parentTable.name}}({{fkField.name}})</td>
-</tr>
-
-{{/if}}
-
-{{/isSQLType}}
-
-{{! foreign key object reference }}
-
-{{#isSQLType "SQLForeignKey"}}
-
-<tr>
-<td>{{name}}</td>
-<td>{{#each getSourceList}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</td>
-<td>{{getTargetTable.name}}({{#each getTargetList}}{{this}}{{#unless @last}}, {{/unless}}{{/each}})</td>
-</tr>
-
-
-{{/isSQLType}}
-{{/fields}}
-</table>
-
-
-{{! end of foreign key section }}
 
 
 
-{{/isSQLType}}
 
-{{#isSQLType "SQLView"}}
-<hr>
-<h2>{{fullyQualifiedName}}</h2>
-<p>This is an SQL View</p>
-
-<p><pre>{{properties.queryString}}<pre></p>
-
-
-
-{{/isSQLType}}
-
-
-{{#isSQLType "SQLComment"}}
-
-<hr>
-
-<h2>{{name}}</h2>
-
-
-<p>{{comment}}</p>
-
-{{/isSQLType}}
-
-
-
-{{/container.objectList}}
-
-
-<hr>
-
-</div>
-</div>
-
-</html>
