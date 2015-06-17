@@ -1,1 +1,0 @@
-../../../../handlebars-objc/src/handlebars-objc/context/HBContextStack.h

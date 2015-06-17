@@ -1,1 +1,0 @@
-../../../../handlebars-objc/src/handlebars-objc/partials/HBPartialRegistry.h

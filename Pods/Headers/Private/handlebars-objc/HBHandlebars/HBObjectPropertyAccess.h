@@ -1,1 +1,0 @@
-../../../../handlebars-objc/src/handlebars-objc/context/HBObjectPropertyAccess.h
