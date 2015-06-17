@@ -15,4 +15,4 @@ Work in progress
 
 This uses submodules, so remember to use 
 
-    git clone --recursive
+    git clone --recursive https://github.com/AngusHardie/SQLEditorSQLitePlugin.git
