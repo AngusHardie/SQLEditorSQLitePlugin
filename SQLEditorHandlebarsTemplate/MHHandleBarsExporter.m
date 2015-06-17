@@ -211,9 +211,9 @@
     NSString* templateSource = [NSString stringWithContentsOfURL:templateURL encoding:NSUTF8StringEncoding error:&error];
     
     
-    
-    [self registerJavascriptHelpersFromScriptURL:scriptURL];
-    
+    if (scriptURL) {
+        [self registerJavascriptHelpersFromScriptURL:scriptURL];
+    }
     
     id context = @{ @"container":container};
     
