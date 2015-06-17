@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+{{!
+
+SQLEditor HTML (Single page) template
+
+Copyright 2015 - MalcolmHardie Solutions Limited
+
+BSD License applies
+
+}}<!DOCTYPE html>
 
 <html>
 <head>
@@ -94,7 +102,44 @@ padding:0.25em;
 {{/fields}}
 </table>
 
+{{! start of Foreign key section }}
 
+<h3>Foreign Keys</h3>
+
+<table class="dataTable">
+<tr><th>Name</th><th>Columns</th><th>References</th></tr>
+{{#fields}}
+{{#isSQLType "SQLField"}}
+
+{{#if getReferencesString}}
+
+<tr>
+    <td> - </td>
+    <td>{{name}}</td>
+    <td>{{fkField.parentTable.name}}({{fkField.name}})</td>
+</tr>
+
+{{/if}}
+
+{{/isSQLType}}
+
+{{! foreign key object reference }}
+
+{{#isSQLType "SQLForeignKey"}}
+
+<tr>
+<td>{{name}}</td>
+<td>{{#each getSourceList}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</td>
+<td>{{getTargetTable.name}}({{#each getTargetList}}{{this}}{{#unless @last}}, {{/unless}}{{/each}})</td>
+</tr>
+
+
+{{/isSQLType}}
+{{/fields}}
+</table>
+
+
+{{! end of foreign key section }}
 
 
 
@@ -127,6 +172,8 @@ padding:0.25em;
 
 {{/container.objectList}}
 
+
+<hr>
 
 </div>
 </div>

@@ -3,8 +3,9 @@
 //  TemplateExporter
 //
 //  Created by Angus Hardie on 05/04/2015.
-//  Copyright (c) 2015 MalcolmHardie Solutions. All rights reserved.
+//  Copyright (c) 2015 MalcolmHardie Solutions.
 //
+//  BSD License Applies
 
 #import "MHHandlebarsPlugin.h"
 #import "MHHandlebarsExporter.h"

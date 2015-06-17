@@ -3,8 +3,9 @@
 //  SQLEditorHandlebarsTemplate
 //
 //  Created by Angus Hardie on 16/06/2015.
-//  Copyright (c) 2015 MalcolmHardie Solutions. All rights reserved.
+//  Copyright (c) 2015 MalcolmHardie Solutions. 
 //
+//  BSD License Applies
 
 #import "MHHandleBarsExporter.h"
 
@@ -78,7 +79,23 @@
 {
     
     
-    return @[@"name",@"type",@"primaryKey",@"isUnique",@"notNull",@"defaultValue",@"getAutoIncrement",@"properties"];
+    return @[@"name",@"type",@"primaryKey",@"parentTable",@"isUnique",@"notNull",@"defaultValue",@"getAutoIncrement",@"getReferencesString",@"fkField",@"properties"];
+    
+}
+
+@end
+
+@interface SQLForeignKey (handlebars)
++ (NSArray*) validKeysForHandlebars;
+@end
+
+@implementation SQLForeignKey (handlebars)
+
++ (NSArray*) validKeysForHandlebars
+{
+    
+    
+    return @[@"name",@"type",@"getTargetTable",@"getSourceList",@"getTargetList",@"properties"];
     
 }
 
@@ -225,6 +242,15 @@
     
     
     return resultString;
+}
+
+
+// hack for older SQLEditor versions
+// this method may get called, just return NO
+- (BOOL)shouldQuoteDefaultFieldValue
+{
+    
+    return NO;
 }
 
 @end
