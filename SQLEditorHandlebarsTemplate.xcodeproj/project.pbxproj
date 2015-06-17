@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		DE6FD3441B31E0B20086B0DD /* SQLModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EB1B3074B4008037F0 /* SQLModel.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DE6FD3451B31E0BF0086B0DD /* SQLModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EB1B3074B4008037F0 /* SQLModel.framework */; };
-		DE6FD35C1B31EAC00086B0DD /* HBHandlebars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6FD35B1B31EAC00086B0DD /* HBHandlebars.framework */; };
+		DECB9C841B31F0ED003C74F2 /* HBHandlebars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEABD5CF1B31F04B00A23E61 /* HBHandlebars.framework */; };
+		DECB9C851B31F0EE003C74F2 /* HBHandlebars.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEABD5CF1B31F04B00A23E61 /* HBHandlebars.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DECFB7E61B30749B008037F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7E51B30749B008037F0 /* main.m */; };
 		DECFB7EC1B3074B4008037F0 /* CocoaOniguruma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFB7EA1B3074B4008037F0 /* CocoaOniguruma.framework */; };
 		DECFB7F01B3074C7008037F0 /* MHHandlebarsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = DECFB7EF1B3074C7008037F0 /* MHHandlebarsPlugin.m */; };
@@ -59,13 +60,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DECB9C851B31F0EE003C74F2 /* HBHandlebars.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DE6FD35B1B31EAC00086B0DD /* HBHandlebars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HBHandlebars.framework; path = "vendor/handlebars-objc/src/build/Debug/HBHandlebars.framework"; sourceTree = "<group>"; };
+		DEABD5CF1B31F04B00A23E61 /* HBHandlebars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HBHandlebars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFB7D51B307488008037F0 /* SQLEditorHandlebarsTemplate.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQLEditorHandlebarsTemplate.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFB7D91B307488008037F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECFB7E31B30749B008037F0 /* SQLTestTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SQLTestTool; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,8 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE6FD35C1B31EAC00086B0DD /* HBHandlebars.framework in Frameworks */,
 				DE6FD3441B31E0B20086B0DD /* SQLModel.framework in Frameworks */,
+				DECB9C841B31F0ED003C74F2 /* HBHandlebars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +107,7 @@
 		DE6FD35D1B31EAE80086B0DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DE6FD35B1B31EAC00086B0DD /* HBHandlebars.framework */,
+				DEABD5CF1B31F04B00A23E61 /* HBHandlebars.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -370,6 +372,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SQLTestTool",
 					"$(PROJECT_DIR)/SQLEditorHandlebarsTemplate",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SQLEditorHandlebarsTemplate-aawsgbqngvtuladoaavrkqapkkkv/Build/Products/Debug",
+					"$(PROJECT_DIR)/vendor/handlebars-objc/src/build/Debug",
+					"$(PROJECT_DIR)/DerivedData/SQLEditorHandlebarsTemplate/Build/Products/Debug",
 				);
 				INFOPLIST_FILE = SQLEditorHandlebarsTemplate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
@@ -394,6 +399,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SQLTestTool",
 					"$(PROJECT_DIR)/SQLEditorHandlebarsTemplate",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SQLEditorHandlebarsTemplate-aawsgbqngvtuladoaavrkqapkkkv/Build/Products/Debug",
+					"$(PROJECT_DIR)/vendor/handlebars-objc/src/build/Debug",
+					"$(PROJECT_DIR)/DerivedData/SQLEditorHandlebarsTemplate/Build/Products/Debug",
 				);
 				INFOPLIST_FILE = SQLEditorHandlebarsTemplate/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
