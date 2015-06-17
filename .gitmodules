@@ -1,0 +1,3 @@
+[submodule "vendor/handlebars-objc"]
+	path = vendor/handlebars-objc
+	url = https://github.com/AngusHardie/handlebars-objc.git
