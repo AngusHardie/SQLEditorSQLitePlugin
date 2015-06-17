@@ -7,7 +7,7 @@
 //
 //  BSD License Applies
 
-#import "MHHandleBarsExporter.h"
+#import "MHSQLiteExampleExporter.h"
 
 #import <JavaScriptCore/JavaScriptCore.h>
 
@@ -31,8 +31,48 @@
 {
     
     
-    return @[@"objectList",@"properties"];
+    return @[@"objectList",@"tables",@"views",@"comments",@"canvasAreas",@"properties"];
     
+}
+
+- (NSArray*)childrenOfType:(Class)classType
+{
+    
+    NSMutableArray* fields = [NSMutableArray array];
+    
+    for (id entry in [self objectList]) {
+        
+        if ([entry isKindOfClass:classType]) {
+            
+            [fields addObject:entry];
+        }
+        
+    }
+    return fields;
+}
+
+- (NSArray*)tables
+{
+    
+    return [self childrenOfType:[SQLTable class]];
+}
+
+- (NSArray*)comments
+{
+    
+    return [self childrenOfType:[SQLComment class]];
+}
+
+- (NSArray*)canvasAreas
+{
+    
+    return [self childrenOfType:NSClassFromString(@"SQLCanvasArea")];
+}
+
+- (NSArray*)views
+{
+    
+    return [self childrenOfType:NSClassFromString(@"SQLView")];
 }
 
 @end
@@ -55,6 +95,7 @@
 
 @interface SQLTable (handlebars)
 + (NSArray*) validKeysForHandlebars;
+- (NSArray*)childrenOfType:(Class)classType;
 @end
 
 @implementation SQLTable (handlebars)
@@ -63,9 +104,46 @@
 {
     
     
-    return @[@"fullyQualifiedName",@"name",@"schemaName",@"tableType",@"fields",@"properties"];
+    return @[@"fullyQualifiedName",@"name",@"schemaName",@"tableType",@"columns",@"fields",@"indexes",@"foreignKeys",@"foreignKeyFieldsInTable",@"properties"];
     
 }
+
+
+- (NSArray*)childrenOfType:(Class)classType
+{
+    
+    NSMutableArray* fields = [NSMutableArray array];
+    
+    for (id entry in [self fields]) {
+        
+        if ([entry isKindOfClass:classType]) {
+            
+            [fields addObject:entry];
+        }
+        
+    }
+    return fields;
+}
+
+- (NSArray*)columns
+{
+    
+    return [self childrenOfType:[SQLField class]];
+}
+
+- (NSArray*)indexes
+{
+    
+    return [self childrenOfType:[SQLIndex class]];
+}
+
+- (NSArray*)foreignKeys
+{
+    
+    return [self childrenOfType:[SQLForeignKey class]];
+}
+
+
 
 @end
 
@@ -95,8 +173,20 @@
 {
     
     
-    return @[@"name",@"type",@"getTargetTable",@"getSourceList",@"getTargetList",@"properties"];
+    return @[@"name",@"type",@"getTargetTable",@"getSourceList",@"sourceListString",@"targetListString",@"getTargetList",@"properties"];
     
+}
+
+- (NSString*)sourceListString
+{
+    
+    return [[self getSourceList] componentsJoinedByString:@","];
+}
+
+- (NSString*)targetListString
+{
+    
+    return [[self getTargetList] componentsJoinedByString:@","];
 }
 
 @end
@@ -111,15 +201,24 @@
 {
     
     
-    return @[@"name",@"indexType",@"properties",@"getLabel",@"fieldList"];
+    return @[@"name",@"indexType",@"properties",@"getLabel",@"columnListString",@"parent",@"fieldList"];
     
+}
+
+
+- (NSString*)columnListString
+{
+    
+    NSArray* nameList = [self getFieldNameList];
+    
+    return [nameList componentsJoinedByString:@","];
 }
 
 @end
 
 
 
-@implementation MHHandleBarsExporter
+@implementation MHSQLiteExampleExporter
 
 
 + (void)registerTypeTest
@@ -147,6 +246,8 @@
     [HBHandlebars registerHelperBlock:isSQLType forName:@"isSQLType"];
     
 }
+
+
 
 
 - (void)registerJavascriptHelpersFromScriptURL:(NSURL*)scriptURL
@@ -214,7 +315,7 @@
 {
     
     
-    [MHHandleBarsExporter registerTypeTest];
+    [MHSQLiteExampleExporter registerTypeTest];
     
     NSError* error = nil;
     

@@ -7,8 +7,8 @@
 //
 //  BSD License Applies
 
-#import "MHHandlebarsPlugin.h"
-#import "MHHandlebarsExporter.h"
+#import "MHSQLiteExamplePlugin.h"
+#import "MHSQLiteExampleExporter.h"
 #define EXPORT_SYMBOL_EXTERNAL __attribute__((visibility("default")))
 #import <SQLModel/SQLContainer.h>
 
@@ -25,15 +25,15 @@
 @end
 
 
-@implementation MHHandlebarsPlugin
+@implementation MHSQLiteExamplePlugin
 
 
 
-#define kPluginName @"HTML Single Page Exporter"
+#define kPluginName @"SQLite Example Plugin"
 
 - (void)initPlugin:(id)sender
 {
-    NSLog(@"HTML Single Page Exporter 1.0");
+    NSLog(@"SQLite Example Plugin 1.0");
     
 }
 
@@ -63,7 +63,7 @@
 {
     
     
-    return @"html";
+    return @"sql";
 }
 
 - (BOOL)canExportType:(id)type
@@ -86,7 +86,7 @@
 - (id)exporter
 {
     
-    return [[MHHandleBarsExporter alloc] init];
+    return [[MHSQLiteExampleExporter alloc] init];
 }
 
 

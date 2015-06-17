@@ -9,6 +9,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MHHandlebarsPlugin : NSObject
+@interface MHSQLiteExamplePlugin : NSObject
 
 @end

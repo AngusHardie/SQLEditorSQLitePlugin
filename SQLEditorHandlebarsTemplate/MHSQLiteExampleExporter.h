@@ -11,7 +11,7 @@
 
 @class JSContext;
 
-@interface MHHandleBarsExporter : NSObject
+@interface MHSQLiteExampleExporter : NSObject
 
 
 
